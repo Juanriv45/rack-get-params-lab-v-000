@@ -21,6 +21,11 @@ class Application
           resp.write "#{item}\n"
         end
       end
+    elsif req.path.match(/add/)
+      search_term = req.params["q"]
+      if !@@items.include?(search_term) then
+          @@items << search_term
+      end
     else
       resp.write "Path Not Found"
     end
