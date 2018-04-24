@@ -25,7 +25,7 @@ class Application
       added_item = req.params["q"]
       if !@@items.include? added_item then
           @@items << added_item
-          resp.write "added #{search_term}"
+          resp.write "added #{added_item}"
       else
           resp.write "error"
       end
