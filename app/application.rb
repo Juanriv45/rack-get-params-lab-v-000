@@ -25,6 +25,9 @@ class Application
       search_term = req.params["q"]
       if !@@items.include?(search_term) then
           @@items << search_term
+          resp.write "added #{search_term}"
+      else
+          resp.write "error"
       end
     else
       resp.write "Path Not Found"
